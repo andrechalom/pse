@@ -1,0 +1,21 @@
+# Required packages:
+import(parallel)
+importFrom(Hmisc, Ecdf)
+import(boot)
+# Loads the correlation correction code from C
+useDynLib(pse, corcorr)
+# Exporting the S3 objects and methods
+S3method(tell, LHS)
+S3method(print, LHS)
+S3method(sbma, default)
+S3method(sbma, LHS)
+S3method(pic, default)
+S3method(pic, LHS)
+S3method(print, pic)
+S3method(print, pcc)
+S3method(print, PLUE)
+S3method(plot, PLUE)
+
+# Explicitly exports the LHS methods
+export(get.data, get.results, get.N, get.ninputs, get.noutputs, get.repetitions)
+export(tell, LHScorcorr, LHS, PLUE, plotecdf, plotprcc, plotscatter, sbma, target.sbma, pic, cv, plotcv, machinefile)

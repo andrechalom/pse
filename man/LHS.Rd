@@ -1,0 +1,115 @@
+\name{LHS}
+\alias{LHS}
+\alias{tell.LHS}
+\alias{print.LHS}
+\title{
+	Latin Hypercube Sampling for uncertainty and sensitivity analyses
+}
+\description{
+	Generates the Latin Hypercube sampling for uncertainty and sensitivity analyses.
+	A Latin Hypercube of size \code{N} is generated from the desired quantile distribution functions
+
+	The following methods are currently supported for generating the LHS: random LHS and 
+	Huntington & Lyrintzis method for correcting the correlation matrix to be similar 
+	to the prescribed by the option \code{COR} (see the arguments for description).
+
+	The specified \code{model} is run with the data from the LHS. If \code{repetitions}
+   	is set to more than one, the model will be run several times for each data point.
+
+	Partial rank correlation coefficients are estimated.
+
+	When the LHS function is called with no model (i.e., with argument
+	\code{model=NULL}), it generates an incomplete object storing the Latin
+	Hypercube samples, and allowing the user to run the simulation
+	model independently. The method \code{tell} allows to pass the simulation
+	results to the incomplete object.
+}
+\usage{
+LHS(model = NULL, factors, N, q = NULL, q.arg = NULL, res.names = NULL, 
+	method=c("HL", "random"), opts=list(), nboot = 0, repetitions=1,
+	cl = NULL)
+\method{tell}{LHS}(x, y, res.names = NULL, nboot = 0, \dots)
+\method{print}{LHS}(x, \dots)
+}
+\arguments{
+	\item{model}{
+		The function to be run, representing the model or simulation.
+		If \code{NULL}, no function is run and the object generated is incomplete, see also the \code{tell} method.
+	}
+	\item{factors}{
+		The names of the input variables (used for naming the 'data' data.frame and in plotting)
+		Either a vector of strings or a single number representing the number of factors
+	}
+	\item{N}{
+		The size of the hypercube, i.e., how many samples are generated. Must be at least the number
+		of factors plus 2.
+	}
+	\item{q}{
+		The quantile functions to be used. If only one is provided, it will be used for all parameters.
+		Defaults to "qunif".
+	}
+	\item{q.arg}{
+		A list containing the arguments for the 'q' functions. Each parameter must be specified by a named
+		list, containing all of the arguments for the quantile distribution. If unsupplied, default values
+		for the parameters are used.
+	}
+	\item{res.names}{
+		Optional: what are the names of the model results? (Used mainly for plotting)
+	}
+	\item{method}{
+		Currently, two methods are supported. "random" generates a simple LH, with no modifications. 
+		"HL" (the default) generates a random LH, and subsequently corrects the correlation matrix
+		using the Huntington & Lyrintzis method.
+	}
+	\item{opts}{
+		Further options for the method used. The method HL supports the following options:
+		`COR'	The desired correlation matrix between the model variables. If none is provided, the function will 
+				generate a zero-correlation Latin Hypercube.
+		`eps'   The tolerance between the prescribed correlation and the actual correlation present in the
+				generated Latin Hypercube.
+	}
+	\item{nboot}{
+		Number of bootstrap replicates for calculating the PRCC.
+	}
+	\item{repetitions}{
+		The number of model repetitions to be run for a single data point. See the vignette on 
+		stochastic models for details
+	}
+	\item{cl}{
+		Cluster generated with the ``parallel'' library. May be of any type supported.
+		If a cluster is provided, the model will be run in parallel or distributed across
+		the cluster via clusterApply. No load balancing is provided, so the model results are
+		reproducible.
+		NOTE: You should manually export ALL objects required for the model to run, including the model
+		function itself. See the help on \code{clusterExport} on package \code{parallel} for
+		details.
+	}
+	\item{x}{An incomplete LHS object (created with model=NULL)}
+	\item{y}{A data.frame containing the model responses}
+	\item{\dots}{Currently ignored}
+}
+\value{
+	An object of the class LHS.
+}
+\section{Warning}{
+	NOTE: the tell method from sensitivity objects (like 'fast99')
+	modifies the object passed as argument as a side effect. This is 
+	NOT the case with the LHS tell method.
+}
+\author{Andre Chalom}
+\source{Uses internal code originally published on package sensitivity, by Gilles Pujol, Bertrand Iooss, Alexandre Janon}
+\references{
+McKay, M.D. and Beckman, R.J. A comparison of three methods for selecting values of input variables in the analysis of output from a computer code, Technometrics. 1979, 21: 239-244
+}
+\examples{
+completeLHS <- LHS(model=function(x) x[,1]+x[,2]*x[,3], factors=3, N=20)
+incompleteLHS <- LHS(factors=5, N=30)
+incompleteLHS <- tell(incompleteLHS, seq(1,30))
+
+\dontrun{
+	library(parallel)
+	new.cluster = makePSOCKcluster(c("localhost", "localhost"))
+	clusterLHS <- LHS(model=function(x) x[,1]/x[,2], factors=2, N=100, cl = new.cluster)
+	stopCluster(new.cluster)
+}
+}

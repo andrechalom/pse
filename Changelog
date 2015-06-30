@@ -1,0 +1,41 @@
+2014-11-23	Andre Chalom
+	* DESCRIPTION: Version is 0.4.0, introducing PLUE method,
+	fixed the calls for parallel.
+	* R/plue.R, LHS.R, accessors.R, etc: Introducing the PLUE method.
+	Separated the model-running from LHS to internal.run, which is
+	also used by PLUE.
+	* NAMESPACE: Including PLUE related functions. corPlot, which was
+	deprecated, has been removed.
+	* R/external.R: fixed a bug in nodeplot when bias is NA
+
+2014-06-17	Andre Chalom
+	* DESCRIPTION: Version is 0.3.4.
+	* R/*.R, man/*.Rd: Several fixes to way xlab/ylab are handled by 
+	plots.
+
+2014-03-18	Andre Chalom
+	* DESCRIPTION: Version is 0.3.3.
+	* NAMESPACE, R/cluster.R, man/machinefile.Rd: Added functions to
+	provide parallel/cluster running of models.
+
+2014-02-05	Andre Chalom (unreleased on CRAN)
+	* DESCRIPTION, NAMESPACE: Version is 0.3.2, dropped the dependency on
+	"sensitivity" (and indirectly, on "rgl")
+	* R/external.R, R/LHS.R, man/decoupling.Rd: Added 
+	functions from "sensitivity"
+	* R/pic.R, man/pic.Rd: fixed pic to work with multiple outputs
+	* R/LHS.R, R/LHScorcorr.R, R/target.sbma: added support for different
+	"method"s for generating LHS. Currently supported: HL and random.
+
+2013-12-05	Andre Chalom 
+	* DESCRIPTION: Version is 0.3.1
+	* NAMESPACE: Changed the registration of the C code to prevent bugs 
+	with reference to "corcorr"
+	* R/LHScorcorr.R: Changed "print" to "warning" in warnings
+	* R/scatterplot.R, man/scatterplot.Rd: renamed "corPlot" to 
+	"plotscatter"
+	* R/plotcv.R, R/plotscatter.R: fixed some bugs
+	* vignettes/pse_tutorial.Rnw: clarifications and examples
+
+2013-11-11	Andre Chalom
+	* First public version
