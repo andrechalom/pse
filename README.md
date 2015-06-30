@@ -8,7 +8,7 @@ The theoretical revision provided in [this arXiv paper] (http://arxiv.org/abs/12
 and the examples provided in the package focus on ecological models, with emphasis in structured 
 population growth models. However, the functions provided should be adequate to other areas of knowledge as well.
 
-The package is available on CRAN at http://cran.r-project.org/web/packages/pse/ and can be installed by
+The package is available on CRAN at http://cran.r-project.org/web/packages/pse/ and can be installed with
 ```R
 install.packages("pse")
 ``` 
