@@ -86,7 +86,7 @@ vec <- function(x, byrow=FALSE)
 #        Bootstrap statistics (overlay for the boot package)
 #                         Gilles Pujol 2006
 #        Released in package sensitivity, licensed as GPL-2
-
+# Edited to make the NAMESPACE less bloated
 
 # bootstats(b, conf = 0.95, type = "norm")
 # b : object of class 'boot'
@@ -113,13 +113,13 @@ bootstats <- function(b, conf = 0.95, type = "norm") {
     # confidence interval
 
     if (type == "norm") {
-      ci <- boot.ci(b, index = i, type = "norm", conf = conf)
+      ci <- boot::boot.ci(b, index = i, type = "norm", conf = conf)
       if (!is.null(ci)) {
         out[i, "min. c.i."] <- ci$norm[2]
         out[i, "max. c.i."] <- ci$norm[3]
       }
     } else if (type == "basic") {
-      ci <- boot.ci(b, index = i, type = "basic", conf = conf)
+      ci <- boot::boot.ci(b, index = i, type = "basic", conf = conf)
       if (!is.null(ci)) {
         out[i, "min. c.i."] <- ci$basic[4]
         out[i, "max. c.i."] <- ci$basic[5]

@@ -1,5 +1,5 @@
 machinefile <- function(name) {
-	x <- read.table(name, sep=":", header=FALSE, stringsAsFactors=FALSE, fill=TRUE)
+	x <- utils::read.table(name, sep=":", header=FALSE, stringsAsFactors=FALSE, fill=TRUE)
 	ret <- c()
 	for (i in 1:(dim(x)[1])) { 
 		if (is.null(x[i,2]) | is.na (x[i,2])) x[i,2] <- 1
