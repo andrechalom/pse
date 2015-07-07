@@ -7,13 +7,13 @@ Author: Andre Chalom, Paulo Inacio Knegt Lopez de Prado
 Maintainer: Andre Chalom <andrechalom@gmail.com>
 Depends: 
     R (>= 3.0.1), 
-    Hmisc, 
-    boot, 
-    parallel
+    Hmisc 
 Imports:
     utils,
     graphics,
-    stats
+    stats,
+    boot, 
+    parallel
 Suggests: 
     sensitivity, 
     mcmc

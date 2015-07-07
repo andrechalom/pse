@@ -107,8 +107,7 @@ incompleteLHS <- LHS(factors=5, N=30)
 incompleteLHS <- tell(incompleteLHS, seq(1,30))
 
 \dontrun{
-	library(parallel)
-	new.cluster = makePSOCKcluster(c("localhost", "localhost"))
+	new.cluster <- parallel::makePSOCKcluster(c("localhost", "localhost"))
 	clusterLHS <- LHS(model=function(x) x[,1]/x[,2], factors=2, N=100, cl = new.cluster)
 	stopCluster(new.cluster)
 }

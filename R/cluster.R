@@ -10,8 +10,8 @@ machinefile <- function(name) {
 
 clusterRun <- function (cl, model, L) {
 	N <- dim(L)[1]
-	sp <- clusterSplit(cl, 1:N)
-	tmp.res <- clusterApply(cl, sp, 
+	sp <- parallel::clusterSplit(cl, 1:N)
+	tmp.res <- parallel::clusterApply(cl, sp, 
 			 fun = function(idx, x) model(x[idx,]), L)
 	n.outs <- length(unlist(tmp.res))/N
 	res <- array( dim=c(N, n.outs));

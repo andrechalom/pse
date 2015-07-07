@@ -29,7 +29,7 @@ pic.default <- function (X, y, nboot = 0, conf=0.95, ...) {
 		pic <- data.frame(original=estim.pic(data))
 		rownames(pic) <- colnames(X)
 	} else {
-		boot.pic <- boot(data, estim.pic, R = nboot)
+		boot.pic <- boot::boot(data, estim.pic, R = nboot)
 		pic <- bootstats(boot.pic, conf, "basic")
 		rownames(pic) <- colnames(X)
 	}

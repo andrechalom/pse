@@ -167,7 +167,7 @@ pcc.default <- function(X, y=NULL, rank = FALSE, nboot = 0, conf = 0.95, ...) {
     pcc <- data.frame(original = estim.pcc(data))
     rownames(pcc) <- colnames(X)
   } else {
-    boot.pcc <- boot(data, estim.pcc, R = nboot)
+    boot.pcc <- boot::boot(data, estim.pcc, R = nboot)
     pcc <- bootstats(boot.pcc, conf, "basic")
     rownames(pcc) <- colnames(X)
   }

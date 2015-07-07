@@ -1,6 +1,6 @@
 # Required packages:
 importFrom(Hmisc, Ecdf)
-import(graphics, stats, parallel)
+import(graphics, stats)
 # Loads the correlation correction code from C
 useDynLib(pse, corcorr)
 # Exporting the S3 objects and methods
