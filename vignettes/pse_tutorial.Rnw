@@ -275,7 +275,7 @@ plotscatter(myLHS)
 @
 
 \cleardoublepage
-\subsection{Partial correlation}
+\subsection{Partial correlation and inclination}
 The partial (rank) correlation coefficient (pcc or prcc) measures how strong are
 the linear associations between the result and each input parameter, after 
 removing the linear effect of the other parameters.
@@ -290,7 +290,8 @@ In the ecological literature, it is usual to refer to the partial derivatives
 of the model response in respect to each parameter as ``the sensitivity'' of 
 the model response in respect to each parameter. One analog measure in stochastic
 models is the Partial Inclination Coefficient (pic) of the model response in respect
-to each parameter. 
+to each parameter. They represent the $\beta$ terms in $y = \alpha + \beta x$ regressions,
+after removing the linear effect of the other parameters.
 
 <<pic>>=
 pic(myLHS, nboot=40)
