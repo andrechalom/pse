@@ -62,7 +62,9 @@ in this tutorial.
 
 This tutorial focuses on the parameter space exploration of deterministic 
 models. For a discussion of stochastic models, see the `multiple' vignette 
-on the same package.
+on the same package. For theoretical background as well as a quick tutorial on
+PLUE analyses, see our paper in \cite{Chalom15}.
+
 
 \section{Input parameters}
 The first thing that must be done is to determine exactly what are
@@ -455,10 +457,14 @@ Then you may proceed with the analyses using prcc, ecdf, etc.
   A. Chalom and P.I.K.L. Prado,
   \emph{Parameter space exploration of ecological models},
   arXiv:1210.6278 [q-bio.QM], 2012.
+\bibitem{Chalom15}
+  A. Chalom and P.I.K.L. Prado,
+  \emph{Uncertainty analysis and composite hypothesis under the likelihood paradigm},
+  arXiv:1508.03354 [q-bio.QM], 2015.
 \bibitem{Geyer}
   C. Geyer, 
   \emph{Calling C and Fortran from R},
-  http://users.stat.umn.edu/~geyer/rc/
+  https://github.com/cjgeyer/foo
 \bibitem{Murray02}
   J.D. Murray,
   \emph{Mathematical Biology I: An Introduction, vol. 17 of Interdisciplinary Applied Mathematics},
