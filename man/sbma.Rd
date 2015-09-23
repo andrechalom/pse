@@ -23,5 +23,6 @@ sbma(sample1, sample2, ...)
 }
 }
 \references{
-Maturi, T.A. and Elsayigh, A. A comparison of correlation coefficients via a three-step bootstrap approach. Journal of Mathematics Research. 2010, 2(2): 3-10.
+  Maturi, T.A. and Elsayigh, A. 2010. A comparison of correlation coefficients 
+  via a three-step bootstrap approach. \emph{Journal of Mathematics Research} 2(2): 3-10.
 }

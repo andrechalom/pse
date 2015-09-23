@@ -1,3 +1,8 @@
+2015-09-23  Andre Chalom
+  * Version is 0.4.3
+  * Added source code and bug tracker URL
+  * Small improvements to documentation, including new references
+
 2015-07-07  Andre Chalom
   * Version is 0.4.2.
   * Fixing Imports and Depends, title now in title case

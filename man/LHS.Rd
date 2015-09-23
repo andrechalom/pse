@@ -21,7 +21,7 @@
 	When the LHS function is called with no model (i.e., with argument
 	\code{model=NULL}), it generates an incomplete object storing the Latin
 	Hypercube samples, and allowing the user to run the simulation
-	model independently. The method \code{tell} allows to pass the simulation
+	model independently. The method \code{\link{tell}} allows to pass the simulation
 	results to the incomplete object.
 }
 \usage{
@@ -99,7 +99,12 @@ LHS(model = NULL, factors, N, q = NULL, q.arg = NULL, res.names = NULL,
 \author{Andre Chalom}
 \source{Uses internal code originally published on package sensitivity, by Gilles Pujol, Bertrand Iooss, Alexandre Janon}
 \references{
-McKay, M.D. and Beckman, R.J. A comparison of three methods for selecting values of input variables in the analysis of output from a computer code, Technometrics. 1979, 21: 239-244
+  McKay, M.D. and Beckman, R.J. 1979. A comparison of three methods for selecting 
+  values of input variables in the analysis of output from a computer code, 
+  \emph{Technometrics} 21: 239-244
+
+  Chalom, A. and Prado, P.I.K.L. 2012. Parameter space exploration of ecological models
+  \emph{arXiv}:1210.6278 [q-bio.QM]
 }
 \examples{
 completeLHS <- LHS(model=function(x) x[,1]+x[,2]*x[,3], factors=3, N=20)

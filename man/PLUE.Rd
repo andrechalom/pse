@@ -10,7 +10,7 @@
 	on a Metropolis Monte Carlo exploration of the parameter space and subsequent profiling
 	of model results based on the likelihood of the input parameters.
 
-	A detailed description is being prepared for publication.
+	A detailed description can be found on Chalom & Prado (2015).
 }
 \usage{
 PLUE(model=NULL, factors, N, LL, start, res.names=NULL, method = c("internal", "mcmc"), 
@@ -68,4 +68,8 @@ PLUE(model=NULL, factors, N, LL, start, res.names=NULL, method = c("internal", "
   \item{...}{
 	Further options
 }
+}
+\references{
+  Chalom, A. and Prado, P.I.K.L. 2015. Uncertainty analysis and composite 
+  hypothesis under the likelihood paradigm. \emph{arXiv}:1508.03354 [q-bio.QM]
 }
