@@ -19,3 +19,5 @@ install.packages("pse")
 
 This package was developed as part of my Master's degree program, which was funded by 
 [CAPES] (http://www.capes.gov.br/) (2012-2014).
+
+More detailed information can be found [here] (http://github.com/andrechalom/pse-theory).
