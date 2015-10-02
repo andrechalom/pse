@@ -1,3 +1,5 @@
+#' @export
+#' @rdname plots
 plotprcc <- function (obj, index.res = 1:dim(obj$res)[2], col='orange', ylab = NULL, ...) {
 	nres <- length(index.res)
 	nl <- floor(sqrt(nres))

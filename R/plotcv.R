@@ -1,9 +1,5 @@
-# Coefficient of variation
-cv <- function(x, ...) {
-	if (mean(x, ...) == 0) return (0)
-	else return (sd(x, ...)/mean(x, ...))
-}
-
+#' @export
+#' @rdname plots
 plotcv <- function(x, stack = FALSE, index.res = 1, col = index.res, ...) { 
 	if (stack)
 		stop("Unimplemented option: stack!");
@@ -21,4 +17,15 @@ plotcv <- function(x, stack = FALSE, index.res = 1, col = index.res, ...) {
 	abline(v=global, lwd=2, lty=3)
 	if (m > 0.8*max(pointwise)) {pos=2} else {pos=4}
 	text(x=global, y=0.1, label="global cv", pos=pos)
+}
+
+#' Coefficient of Variation
+#' 
+#' Returns the coefficient of variation of a sample.
+#' @param x Any numeric vector (or other data type for which \code{sd} and \code{mean} methods are defined)
+#' @param \dots Additional parameters for the \code{sd} and \code{mean} functions (such as \code{na.rm=TRUE})
+#' @export
+cv <- function(x, ...) {
+	if (mean(x, ...) == 0) return (0)
+	else return (sd(x, ...)/mean(x, ...))
 }

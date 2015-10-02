@@ -1,15 +1,17 @@
+#' @export
+#' @rdname plots
 plotscatter <-
-	function (vars, res=NULL, index.data=NULL, index.res=NULL, add.lm=TRUE, ylab = NULL, ...) {
-		if (class(vars)=="LHS" | class(vars)=="PLUE") {
-			if (is.null(index.data)) index.data <- 1:get.ninputs(vars)
-			if (is.null(index.res)) index.res <- 1:get.noutputs(vars)
-			data=get.data(vars)
-			results=get.results(vars)
-			if(is.null(ylab)) ylab = vars$res.names[index.res]
+	function (obj, res=NULL, index.data=NULL, index.res=NULL, add.lm=TRUE, ylab = NULL, ...) {
+		if (class(obj)=="LHS" | class(obj)=="PLUE") {
+			if (is.null(index.data)) index.data <- 1:get.ninputs(obj)
+			if (is.null(index.res)) index.res <- 1:get.noutputs(obj)
+			data=get.data(obj)
+			results=get.results(obj)
+			if(is.null(ylab)) ylab = obj$res.names[index.res]
 			plotscatter(data[,index.data], results[,index.res], add.lm=add.lm, ylab = ylab, ...)
 		} else {
 			res <- as.data.frame(res)
-			if (is.null(dim(vars))) {nplots <-1} else {nplots <- dim(vars)[2]}
+			if (is.null(dim(obj))) {nplots <-1} else {nplots <- dim(obj)[2]}
 			if (is.null(dim(res))) {nplots <-nplots*1} else {nplots <- nplots* dim(res)[2]}
 
 			nl <- floor(sqrt(nplots))
@@ -27,10 +29,10 @@ plotscatter <-
 					else this.ylab=ylab[index.res]
 				}
 				
-				oneplotscatter(res[,index.res],vars[, index.var], c(names(vars)[index.var],this.ylab), add.lm, ...)
+				oneplotscatter(res[,index.res],obj[, index.var], c(names(obj)[index.var],this.ylab), add.lm, ...)
 				index.res <- index.res +1
 				if (index.res > dim(res)[2]) {index.res <- 1; index.var <- index.var + 1}
-				if (index.var > dim(vars)[2]) break;
+				if (index.var > dim(obj)[2]) break;
 			}
 		}
 	}

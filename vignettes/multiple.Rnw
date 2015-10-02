@@ -139,7 +139,8 @@ larger than most of the pointwise cvs. It is then reasonable to assume that the
 uncertainty and sensitivity analyses done with average responses are robust.
 
 <<cv, fig=T>>=
-cv(get.results(LHS2)) # global CV
+r <- get.results(LHS2)
+sd(r) / mean(r) # global CV
 plotcv(LHS2)
 @
 
