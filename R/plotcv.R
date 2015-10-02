@@ -1,16 +1,16 @@
 #' @export
 #' @rdname plots
-plotcv <- function(x, stack = FALSE, index.res = 1, col = index.res, ...) { 
+plotcv <- function(obj, stack = FALSE, index.res = 1, col = index.res, ...) { 
 	if (stack)
 		stop("Unimplemented option: stack!");
 	if (index.res != 1)
 		stop ("Unimplemented option: index.res");
-	if (class(x)!="LHS")
+	if (class(obj)!="LHS")
 		stop("The first argument should be of class LHS!");
-	if (get.repetitions(x)<2)
+	if (get.repetitions(obj)<2)
 		stop("Error in function plotcv: the LHS object must have at least two repetitions!")
-	pointwise <- apply(get.results(x, FALSE), c(1,2), cv)
-	global <- cv(get.results(x, TRUE))
+	pointwise <- apply(get.results(obj, FALSE), c(1,2), cv)
+	global <- cv(get.results(obj, TRUE))
 	m <- max(pointwise, 1.05*global)
 	mi <- min(pointwise, global)
 	Ecdf(pointwise, xlim=c(mi, m), xlab="pointwise cv", col=col, ...)

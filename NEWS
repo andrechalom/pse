@@ -1,7 +1,7 @@
 2015-10-02  Andre Chalom
   * Version is 0.4.4
   * Added Spearman correlation method for LHScorcorr
-  * Renamed the first argument for plotscatter for coherence with other plotting functions
+  * Renamed the first argument for plotscatter/plotcv for coherence with other plotting functions
   * Improved the documentation and changed it to Roxygen
 
 2015-09-23  Andre Chalom
