@@ -63,7 +63,7 @@ stochastic models for details}
         function itself. See the help on \code{clusterExport} on package \code{parallel} for
         details.}
 
-\item{x}{An incomplete LHS object (created with model=NULL)}
+\item{x}{An LHS/PLUE object. For "tell", an incomplete LHS object (created with model=NULL)}
 
 \item{y}{A data.frame containing the model responses}
 

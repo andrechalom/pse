@@ -37,7 +37,8 @@
 #'  Chalom, A. and Prado, P.I.K.L. 2012. Parameter space exploration of ecological models
 #'  \emph{arXiv}:1210.6278 [q-bio.QM]
 #' @export
-#' @useDynLib pse
+#' @import stats
+#' @useDynLib pse, corcorr
 LHScorcorr <-
 	function (vars, COR = 0, method=c("Pearson", "Spearman"), eps = 0.005, echo=FALSE, maxIt = 0) {
     method <- match.arg(method)

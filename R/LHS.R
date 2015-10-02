@@ -61,7 +61,7 @@
 #'		NOTE: You should manually export ALL objects required for the model to run, including the model
 #'		function itself. See the help on \code{clusterExport} on package \code{parallel} for
 #'		details.
-#'@param x An incomplete LHS object (created with model=NULL)
+#'@param x An LHS/PLUE object. For "tell", an incomplete LHS object (created with model=NULL)
 #'@param y A data.frame containing the model responses
 #'@param \dots Currently ignored
 #'@section Warning:

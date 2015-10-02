@@ -183,6 +183,13 @@ pcc.default <- function(X, y=NULL, rank = FALSE, nboot = 0, conf = 0.95, ...) {
   return(out)
 }
 
+#' External functions
+#' 
+#' This function is derived from package "sensitivity", please proceed to its help files.
+#' @param x A PCC or PRCC object
+#' @param \dots Currently ignored
+#' @export
+#' @rdname external
 print.pcc <- function(x, ...) {
   cat("\nCall:\n", deparse(x$call), "\n", sep = "")
   if ("PCC" %in% names(x)) {

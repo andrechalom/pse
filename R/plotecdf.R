@@ -42,7 +42,7 @@
 #' plotscatter(myLHS)
 #' @export
 #' @rdname plots
-#' @import graphics
+#' @import graphics Hmisc
 plotecdf <- function (obj, stack=FALSE, index.res =1:get.noutputs(obj), col=index.res, xlab = NULL, ...) {
 	if (is.null (xlab)) xlab = obj$res.names
 	if (stack) {
