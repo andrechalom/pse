@@ -1,4 +1,0 @@
-all: pse.o
-
-clean:
-	-rm *.o *.so
