@@ -50,6 +50,8 @@
 #'				generate a zero-correlation Latin Hypercube.
 #'		`eps'   The tolerance between the prescribed correlation and the actual correlation present in the
 #'				generated Latin Hypercube.
+#'		`maxIt' The maximum number of iterations to be run for each factor. The default is set by a heuristic,
+#'              but it might need some adjustments.
 #'@param nboot Number of bootstrap replicates for calculating the PRCC.
 #'@param repetitions The number of model repetitions to be run for a single data point. See the vignette on 
 #'		stochastic models for details
@@ -94,7 +96,7 @@ LHS <-
 			  opts=list(), nboot=0, repetitions=1, cl = NULL) {
 		# Input validation for common errors and "default" value handling:
 		method = match.arg(method)
-		my.opts = list(COR=0, eps=0.0005)
+		my.opts = list(COR=0, eps=0.0005, maxIt=0)
 		my.opts[names(opts)] <- opts
 		if(is.numeric(factors) && length(factors) == 1) factors=paste("I", 1:factors, sep="")
 		else if (!is.character(factors)) {
@@ -119,7 +121,7 @@ LHS <-
 			L[,i] <- sample(do.call(q[[i]], c(list(p = 1:N/N-1/N/2), q.arg[[i]])))
 		# Corrects the correlation terms, for HL method for LHS
 		if (method == "HL") {
-			L <- LHScorcorr(L, COR = my.opts$COR, eps = my.opts$eps); 
+			L <- LHScorcorr(L, COR = my.opts$COR, eps = my.opts$eps, maxIt = my.opts$maxIt); 
 		}
 		# Runs the actual model
 		res <- internal.run(cl, model, L, repetitions)

@@ -1,27 +1,28 @@
 Package: pse
 Type: Package
 Title: Parameter Space Exploration with Latin Hypercubes
-Version: 0.4.4
-Date: 2015-10-02
+Version: 0.4.5
+Date: 2016-03-14
 Author: Andre Chalom, Paulo Inacio Knegt Lopez de Prado
 Maintainer: Andre Chalom <andrechalom@gmail.com>
-Depends: 
-    R (>= 3.0.1), 
-    Hmisc 
+Depends:
+    R (>= 3.0.1),
+    Hmisc
 Imports:
     utils,
     graphics,
     stats,
-    boot, 
+    boot,
     parallel
-Suggests: 
-    sensitivity, 
+Suggests:
+    sensitivity,
     mcmc
 Description: Functions for creating Latin Hypercubes with
-	prescribed correlations and performing parameter space exploration.
-	Also implements the PLUE method.
-	Based on the package sensitivity, by Gilles Pujol, 
-	Bertrand Iooss & Alexandre Janon.
+    prescribed correlations and performing parameter space exploration.
+    Also implements the PLUE method.
+    Based on the package sensitivity, by Gilles Pujol,
+    Bertrand Iooss & Alexandre Janon.
 License: GPL-3
 URL: https://github.com/andrechalom/pse
-BugReports: https://github.com/andrechalom/pse 
+BugReports: https://github.com/andrechalom/pse
+RoxygenNote: 5.0.1
