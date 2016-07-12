@@ -1,4 +1,6 @@
 # pse
+[![Build Status](https://travis-ci.org/andrechalom/pse.svg?branch=master)](https://travis-ci.org/andrechalom/pse)
+
 R package for exploration of parameter spaces
 
 This package aims to provide a simple and robust approach to the exploration of parameter spaces of
