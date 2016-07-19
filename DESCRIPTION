@@ -1,8 +1,8 @@
 Package: pse
 Type: Package
 Title: Parameter Space Exploration with Latin Hypercubes
-Version: 0.4.5
-Date: 2016-03-14
+Version: 0.4.6
+Date: 2016-07-19
 Author: Andre Chalom, Paulo Inacio Knegt Lopez de Prado
 Maintainer: Andre Chalom <andrechalom@gmail.com>
 Depends:

@@ -44,12 +44,20 @@
 #' @rdname plots
 #' @import graphics Hmisc
 plotecdf <- function (obj, stack=FALSE, index.res =1:get.noutputs(obj), col=index.res, xlab = NULL, ...) {
+    opar = par(no.readonly=TRUE)
+    on.exit(par(opar))
 	if (is.null (xlab)) xlab = obj$res.names
 	if (stack) {
 		if (length(xlab) > 1) xlab = "obj results"
 		dat <- vec(get.results(obj)[,index.res])
 		g <- rep(index.res, each=dim(obj$res)[1])
 		Ecdf(dat, group=g, col=col, xlab=xlab, ...)
-	} else Ecdf(get.results(obj)[,index.res], xlab=xlab, ...)
+	} else {
+        nl = floor(sqrt(length(index.res)))
+        nc = ceiling(length(index.res)/nl)
+        par(mfrow=c(nl, nc))
+        for (i in index.res)
+            Ecdf(get.results(obj)[,i], xlab=xlab, ...)
+    }
 }
 

@@ -1,3 +1,13 @@
+2016-07-19  Andre Chalom
+  * Version is 0.4.6
+  * Improved the plotcv function and fixed plotcv and plotecdf to work with multiple 
+  response variables
+  * Introduced Travis CI
+
+2016-03-14  Andre Chalom
+  * Version is 0.4.5
+  * Added maximum iteration parameter (maxIt) for LHS
+
 2015-10-02  Andre Chalom
   * Version is 0.4.4
   * Added Spearman correlation method for LHScorcorr
