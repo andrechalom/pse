@@ -7,7 +7,8 @@
 \alias{plotscatter}
 \title{Uncertainty and Sensitivity Plots.}
 \usage{
-plotcv(obj, stack = FALSE, index.res = 1, col = index.res, ...)
+plotcv(obj, stack = FALSE, index.res = 1:get.noutputs(obj),
+  col = index.res, quant = 0.99, ...)
 
 plotecdf(obj, stack = FALSE, index.res = 1:get.noutputs(obj),
   col = index.res, xlab = NULL, ...)
@@ -31,6 +32,8 @@ all variables identified by different colors.}
 \item{index.res}{An optional vector indicating which columns from the results are to be plotted.}
 
 \item{col}{An optional vector indicating the colors to be used.}
+
+\item{quant}{Maximum quantile to be plotted on the ecdf (used to cut off extreme values in the labels)}
 
 \item{xlab, ylab}{Labels for the x axis (ecdf) or y axis(prcc). 
 The functions use the name provided in the res.names argument from the LHS function if left blank.}
