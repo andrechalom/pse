@@ -67,9 +67,9 @@ stochastic models for details}
 
 \item{x}{An LHS/PLUE object. For "tell", an incomplete LHS object (created with model=NULL)}
 
-\item{y}{A data.frame containing the model responses}
-
 \item{\dots}{Currently ignored}
+
+\item{y}{A data.frame containing the model responses}
 }
 \description{
 Generates the Latin Hypercube sampling for uncertainty and sensitivity analyses.
@@ -107,6 +107,7 @@ NOTE: the tell method from sensitivity objects (like 'fast99')
 modifies the object passed as argument as a side effect. This is 
 NOT the case with the LHS tell method.
 }
+
 \examples{
 completeLHS <- LHS(model=function(x) x[,1]+x[,2]*x[,3], factors=3, N=20)
 incompleteLHS <- LHS(factors=5, N=30)
@@ -118,9 +119,6 @@ clusterLHS <- LHS(model=function(x) x[,1]/x[,2], factors=2, N=100, cl = new.clus
 stopCluster(new.cluster)
 }
 }
-\author{
-Andre Chalom
-}
 \references{
 McKay, M.D. and Beckman, R.J. 1979. A comparison of three methods for selecting 
  values of input variables in the analysis of output from a computer code, 
@@ -129,4 +127,6 @@ McKay, M.D. and Beckman, R.J. 1979. A comparison of three methods for selecting
  Chalom, A. and Prado, P.I.K.L. 2012. Parameter space exploration of ecological models
  \emph{arXiv}:1210.6278 [q-bio.QM]
 }
-
+\author{
+Andre Chalom
+}

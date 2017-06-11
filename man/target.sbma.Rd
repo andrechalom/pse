@@ -54,4 +54,3 @@ Returns the largest LHS generated.
 Generates a series of Latin Hypercube Samples for a model until a pair of LHS
 present a measure of agreement equal to or greater than a specified target.
 }
-

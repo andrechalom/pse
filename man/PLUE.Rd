@@ -2,8 +2,8 @@
 % Please edit documentation in R/PLUE.R
 \name{PLUE}
 \alias{PLUE}
-\alias{plot.PLUE}
 \alias{print.PLUE}
+\alias{plot.PLUE}
 \title{Profiled Likelihood Uncertainty Estimation}
 \usage{
 PLUE(model = NULL, factors, N, LL, start, res.names = NULL,
@@ -65,4 +65,3 @@ A detailed description can be found on Chalom & Prado (2015).
 Chalom, A. and Prado, P.I.K.L. 2015. Uncertainty analysis and composite 
  hypothesis under the likelihood paradigm. \emph{arXiv}:1508.03354 [q-bio.QM]
 }
-

@@ -14,4 +14,3 @@
 \description{
 This function is derived from package "sensitivity", please proceed to its help files.
 }
-

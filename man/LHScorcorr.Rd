@@ -54,4 +54,3 @@ Huntington, D.E. and Lyrintzis, C.S. 1998 Improvements to and limitations of
  Chalom, A. and Prado, P.I.K.L. 2012. Parameter space exploration of ecological models
  \emph{arXiv}:1210.6278 [q-bio.QM]
 }
-

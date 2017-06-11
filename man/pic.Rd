@@ -32,9 +32,9 @@ of experiments (model output variables).}
 
 \item{conf}{Confidence of the bootstrap interval}
 
-\item{x}{The object returned by \code{pic}.}
-
 \item{\dots}{Currently ignored.}
+
+\item{x}{The object returned by \code{pic}.}
 }
 \description{
 Partial Inclination Coefficient
@@ -44,4 +44,3 @@ in relation with all model input variables.
 \author{
 Andre Chalom, based on code by Gilles Pujol, Bertrand Iooss, Alexandre Janon
 }
-

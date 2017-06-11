@@ -28,4 +28,3 @@ glastonbury:2
 	stopCluster(cl)
 }
 }
-

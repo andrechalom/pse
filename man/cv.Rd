@@ -14,4 +14,3 @@ cv(x, ...)
 \description{
 Returns the coefficient of variation of a sample.
 }
-

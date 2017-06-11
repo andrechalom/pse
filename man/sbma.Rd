@@ -2,8 +2,8 @@
 % Please edit documentation in R/sbma.R
 \name{sbma}
 \alias{sbma}
-\alias{sbma.LHS}
 \alias{sbma.default}
+\alias{sbma.LHS}
 \title{Calculates the Symetrized Blest Measure of Agreement between two samples}
 \usage{
 sbma(sample1, sample2, absolute = TRUE, ...)
@@ -47,4 +47,3 @@ cor(c(1,2,3,4), c(1,2,4,3), method="spearman")
 Maturi, T.A. and Elsayigh, A. 2010. A comparison of correlation coefficients 
  via a three-step bootstrap approach. \emph{Journal of Mathematics Research} 2(2): 3-10.
 }
-
