@@ -38,7 +38,7 @@
 #'  \emph{arXiv}:1210.6278 [q-bio.QM]
 #' @export
 #' @import stats
-#' @useDynLib pse, corcorr
+#' @useDynLib pse, .registration = "TRUE", .fixes = "C_"
 LHScorcorr <-
 	function (vars, COR = 0, method=c("Pearson", "Spearman"), eps = 0.005, echo=FALSE, maxIt = 0) {
     method <- match.arg(method)
@@ -76,7 +76,7 @@ internal.LHScorcorr <- function (vars, COR, l, eps, it, echo, maxIt) {
   }
   if (echo==T) cat(paste("Info: Correlation correction being made for l =",l,"/",M, "\n"))
   # Here we start correcting the correlation for var[,l]
-  V <- .C(corcorr, vars=as.double(as.matrix(vars)),cor=as.double(COR), N=as.integer(N), M=as.integer(M), l=as.integer(l), FLAGSTOP=as.integer(0))
+  V <- .C(C_corcorr, vars=as.double(as.matrix(vars)),cor=as.double(COR), N=as.integer(N), M=as.integer(M), l=as.integer(l), FLAGSTOP=as.integer(0))
   vars <- as.data.frame(matrix(V$vars, nrow=N, ncol=M))
   names(vars) <- my.names
   if (V$FLAGSTOP == 1) { # Convergence, going for next
