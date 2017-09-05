@@ -1,5 +1,7 @@
 # pse
 [![Build Status](https://travis-ci.org/andrechalom/pse.svg?branch=master)](https://travis-ci.org/andrechalom/pse)
+[![CRAN Status](https://img.shields.io/cran/v/pse.svg)](https://cran.r-project.org/package=pse)
+
 
 R package for exploration of parameter spaces
 
@@ -14,7 +16,7 @@ We also propose a new methodology based on the likelihood statistical paradigm, 
 PLUE - Profiled Likelihood Uncertainty Estimation. The theoretical background for it can be found
 in [this arXiv paper] (http://arxiv.org/abs/1508.03354).
 
-The package is available on CRAN at http://cran.r-project.org/web/packages/pse/ and can be installed with
+The package is available on CRAN at https://cran.r-project.org/package=pse and can be installed with
 ```R
 install.packages("pse")
 ``` 
