@@ -1,7 +1,7 @@
 # pse
 [![Build Status](https://travis-ci.org/andrechalom/pse.svg?branch=master)](https://travis-ci.org/andrechalom/pse)
 [![CRAN Status](https://img.shields.io/cran/v/pse.svg)](https://cran.r-project.org/package=pse)
-
+[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg)](LICENSE)
 
 R package for exploration of parameter spaces
 
